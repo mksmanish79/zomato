@@ -9,11 +9,11 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" href="/addresttaurant">Add Restaurant</a>
+                            <a className="nav-link" href="/partner">Add Restaurant</a>
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <button className="btn btn-outline-success" type="submit">Login or Signup</button>
+                        <button className="btn btn-outline-success" type="button" onClick={() => window.location.href = '/login'}>Login or Signup</button>
                     </form>
                 </div>
             </div>
