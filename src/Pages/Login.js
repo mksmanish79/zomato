@@ -11,6 +11,9 @@ const Login = function () {
         if (!get(signinform, "email")) {
             _error["email"] = "Email is required!";
         }
+        if (get(signinform, "email").length > 0 && get(signinform, "email") != 'mansh') {
+            _error["email"] = "Valid Email is required!";
+        }
         if (!get(signinform, "password")) {
             _error["password"] = "Password is required!";
         }
@@ -22,6 +25,11 @@ const Login = function () {
     };
 
     const doSignIn = () => {
+        if (validateForm()) {
+
+        }
+    };
+    const doSignUp = () => {
         if (validateForm()) {
 
         }
@@ -49,7 +57,7 @@ const Login = function () {
                             {get(error, 'password') && <span className="error">{get(error, 'password')}</span>}
                         </div>
                         <div className="form-group text-center">
-                            {isSignIn ? <button type="button" className="btn btn-primary mt-1" onClick={doSignIn}>Sign In</button> : <button type="button" className="btn btn-primary mt-1">Sign Up</button>}
+                            {isSignIn ? <button type="button" className="btn btn-primary mt-1" onClick={doSignIn}>Sign In</button> : <button type="button" className="btn btn-primary mt-1" onClick={doSignUp}>Sign Up</button>}
                             <hr />
                             {isSignIn ? <button type="button" className="btn mt-1" onClick={() => setisSignIn(false)}>Sign Up</button> : <button type="button" className="btn mt-1" onClick={() => setisSignIn(true)}>Sign In</button>}
                         </div>
