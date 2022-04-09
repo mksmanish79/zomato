@@ -39,3 +39,8 @@ C:\React Sample\zomato\API\zomato\obj\Debug\netcoreapp3.1\zomato.csproj.CopyComp
 C:\React Sample\zomato\API\zomato\obj\Debug\netcoreapp3.1\zomato.dll
 C:\React Sample\zomato\API\zomato\obj\Debug\netcoreapp3.1\zomato.pdb
 C:\React Sample\zomato\API\zomato\obj\Debug\netcoreapp3.1\zomato.genruntimeconfig.cache
+C:\React Sample\zomato\API\zomato\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\React Sample\zomato\API\zomato\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\React Sample\zomato\API\zomato\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\React Sample\zomato\API\zomato\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\React Sample\zomato\API\zomato\obj\Debug\netcoreapp3.1\zomato.MvcApplicationPartsAssemblyInfo.cs
