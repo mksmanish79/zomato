@@ -10,6 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using zomato.Data;
+using zomato.Factories;
+using zomato.Factories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace zomato
 {
@@ -27,6 +31,9 @@ namespace zomato
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddAutoMapper(typeof(Startup));
+            services.AddDbContext<ZomatoContext>(item => item.UseSqlServer(Configuration.GetConnectionString("SiteSqlServer")));
+            services.AddScoped<IUserFactory, UserFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace zomato.Data
 {
@@ -11,6 +7,9 @@ namespace zomato.Data
         public ZomatoContext()
         {
 
+        }
+        public ZomatoContext(DbContextOptions<ZomatoContext> options) : base(options)
+        {
         }
         public DbSet<User> Users { get; set; }
     }
