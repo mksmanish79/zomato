@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using zomato.Data;
 
 namespace zomato.Migrations
 {
     [DbContext(typeof(ZomatoContext))]
-    partial class ZomatoContextModelSnapshot : ModelSnapshot
+    [Migration("20220421164842_addedrefreshtoken")]
+    partial class addedrefreshtoken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

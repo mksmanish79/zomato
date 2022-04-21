@@ -21,5 +21,10 @@ namespace zomato.Data
         [StringLength(50)]
         [Required]
         public string Password { get; set; }
+
+        [StringLength(255)]
+        public string RefreshToken { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }

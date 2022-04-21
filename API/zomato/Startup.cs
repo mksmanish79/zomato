@@ -34,6 +34,7 @@ namespace zomato
             services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<ZomatoContext>(item => item.UseSqlServer(Configuration.GetConnectionString("SiteSqlServer")));
             services.AddScoped<IUserFactory, UserFactory>();
+            services.AddScoped<IJwtAuth, JwtAuth>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

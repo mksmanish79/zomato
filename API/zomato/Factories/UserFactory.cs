@@ -18,6 +18,20 @@ namespace zomato.Factories
             _mapper = mapper;
             _zomatoContext = zomatoContext;
         }
+
+        public async Task<ApiResponse<int>> LoginUser(TRegister model)
+        {
+            ApiResponse<int> response = new ApiResponse<int> { };
+            User user = await Task.FromResult(_zomatoContext.Users.Where(l => l.Email == model.Email && l.Password == model.Password).SingleOrDefault());
+            if (user != null)
+            {
+                response.Status = true;
+                response.Message = "Login Successfully";
+                response.Result = user.ID;
+            }
+            return response;
+        }
+
         public async Task<ApiResponse<int>> RegisterUser(TRegister model)
         {
             ApiResponse<int> response = new ApiResponse<int> { };
@@ -28,6 +42,18 @@ namespace zomato.Factories
                 response.Status = true;
                 response.Message = "Registered Successfully";
                 response.Result = user.ID;
+            }
+            return response;
+        }
+
+        public async Task<ApiResponse<TRegister>> Get(int UserID)
+        {
+            ApiResponse<TRegister> response = new ApiResponse<TRegister> { };
+            User user = await Task.FromResult(_zomatoContext.Users.Where(l => l.ID == UserID).SingleOrDefault());
+            if (user != null)
+            {
+                response.Status = true;
+                response.Result = _mapper.Map<TRegister>(user);
             }
             return response;
         }
